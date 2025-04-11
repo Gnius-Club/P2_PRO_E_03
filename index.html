@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 3: ¡Calidad del Núcleo! – Parte 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none;
+            display: block;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
+
+        summary {
+           display: block;
+           list-style: none;
+        }
+        summary::-webkit-details-marker {
+           display: none;
+        }
+
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content) {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        }
+
+        window.onload = () => {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 3: ¡Calidad del Núcleo! – Parte 1</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">📝 Resumen de Sesión</div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Probar intensivamente las partes del núcleo construidas hasta ahora.</li>
+                                <li>Identificar y corregir bugs en la funcionalidad central.</li>
+                                <li>Asegurar la calidad inicial del núcleo del prototipo.</li>
+                            </ul>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong>
+                            <ul>
+                                <li>Funcionalidades del núcleo probadas.</li>
+                                <li>Bugs identificados y (idealmente) corregidos.</li>
+                                <li>Tablero Kanban actualizado reflejando el estado de las pruebas (tareas movidas a ✅ o de vuelta a ⚙️).</li>
+                            </ul>
+                             <strong>🛠️ Materiales/Preparación:</strong>
+                            <ul>
+                                <li>Dispositivos con acceso a Scratch y los proyectos en desarrollo.</li>
+                                <li>Tablero Kanban de cada equipo actualizado desde Sesión 2.</li>
+                                <li>Acceso al T-Bar y al diseño técnico/flujo.</li>
+                                <li>Proyector o pantalla.</li>
+                                <li>Método para documentar bugs (post-its, notas digitales, etc.).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: Stand-up de Calidad -->
+        <div id="activity-1" class="activity">
+             <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🧐 Actividad 1: Stand-up de Calidad ⏰ Tiempo: 5 minutos</div>
+             </div>
+            <div id="activity_1_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (1 min):</strong> Reunir equipos frente a Kanbans. Introducir el enfoque en calidad y pruebas del núcleo.
+                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 3: ¡Calidad del Núcleo - Parte 1!" y Objetivo).
+                            </td>
+                            <td>
+                                "¡Hola, Equipos Pro! Hoy nos convertimos en detectives de calidad. Después de construir el inicio de nuestro núcleo, es hora de ponerlo a prueba intensivamente. ¡Vamos a asegurarnos de que esa base sea súper sólida!"
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (4 min):</strong> Guiar stand-up enfocado en tareas "Listas para Probar (🔬)".
+                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban resaltando 'Listo para Probar'. Pregunta: "¿Qué testeamos hoy del núcleo?").
+                            </td>
+                            <td>
+                                "Frente a sus Kanbans, centrémonos en la columna 'Listo para Probar (🔬)', si tienen tareas ahí, o en lo último que movieron a '¡Listo!' en la sesión pasada."
+                                <br><br>
+                                "Testers, ¿qué funcionalidad clave del núcleo van a poner bajo la lupa hoy? ¿Qué parte específica van a probar intensivamente?"
+                                <br><br>
+                                <em>(Facilitar que cada equipo identifique claramente qué parte del núcleo construido será el foco de las pruebas de hoy).</em>
+                                <br><br>
+                                "¡Excelente! Objetivo de pruebas definido. ¡A buscar la perfección en ese núcleo!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2: ¡Modo Detective! Ciclo Prueba-Corrección -->
+        <div id="activity-2" class="activity">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                 <div class="title">🕵️ Actividad 2: ¡Modo Detective! Ciclo Prueba-Corrección ⏰ Tiempo: 30 minutos</div>
+             </div>
+            <div id="activity_2_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Facilitar ciclo intensivo de pruebas (Tester lidera), corrección (Programador) y apoyo (Arquitecto). Foco en la calidad del núcleo inicial. Circular y apoyar.
+                                (<strong>Proyectar Diapositiva 3</strong>: Diagrama Ciclo Prueba-Corrección con roles: Tester (Lidera Pruebas 🔬), Programador (Corrige Bugs 💻), Arquitecto (Apoya/Diagnostica 🤔)).
+                            </td>
+                            <td>
+                                "¡Modo Detective activado! Tienen 30 minutos para este ciclo crucial de prueba y corrección enfocado en el núcleo que han construido."
+                                <br><br>
+                                "<strong>Testers Creativos/as:</strong> ¡Lideren la investigación! Prueben a fondo las funcionalidades del núcleo que identificaron. Busquen cualquier comportamiento inesperado, error o 'bug'. ¡Sean meticulosos! Documenten los bugs de forma clara para el programador."
+                                <br><br>
+                                "<strong>Programadores/as Scratch:</strong> ¡Sus habilidades de solución de problemas al máximo! Reciban los reportes de bugs del Tester y sumérjanse en el código para encontrar y corregir esos errores."
+                                <br><br>
+                                "<strong>Arquitectos/as Digitales:</strong> ¡Apoyo estratégico! Ayuden a diagnosticar los problemas más difíciles. Asegúrense de que las soluciones mantengan la coherencia del diseño y apoyen al programador y tester."
+                                <br><br>
+                                "¡El objetivo es un núcleo robusto! ¡Comunicación constante entre roles es esencial!"
+                                <br><br>
+                                <em>(Circular activamente, ayudar a los Testers a definir casos de prueba, apoyar a los Programadores en la depuración, facilitar la colaboración entre roles. Animar a probar diferentes escenarios).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (Integrado en los 30 min):</strong> Gestionar flujo Kanban: Tareas OK a "¡Listo!"; tareas con bugs vuelven a "Haciendo" con notas claras.
+                                (<strong>Proyectar Diapositiva 4</strong>: Recordatorio visual Flujo Kanban en Pruebas: 🔬 -> ✅ (Pasa), 🔬 -> ⚙️ (Falla + Nota 📝🐞)).
+                            </td>
+                            <td>
+                                <em>(Recordar y supervisar el flujo mientras circulan):</em>
+                                <br>
+                                "¡Recuerden actualizar el Kanban!"
+                                <br><br>
+                                "Si una parte del núcleo probada funciona perfectamente (¡sin bugs!), ¡Arquitecto/a, muévanla a '¡Listo! (✅)'!"
+                                <br><br>
+                                "Si el Tester encuentra un bug importante en una tarea que estaba en 'Listo para Probar', ¡esa tarea vuelve a 'Haciendo (⚙️)'! Asegúrense de añadir una nota clara sobre el bug encontrado para que el Programador/a sepa qué corregir."
+                                <br><br>
+                                "¡Queremos que al final de este ciclo, lo que esté en '¡Listo!' sea realmente de alta calidad!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3: Cierre Rápido de Calidad -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">⏱️ Actividad 3: Cierre Rápido de Calidad ⏰ Tiempo: 5 minutos</div>
+            </div>
+            <div id="activity_3_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Revisar Kanban: ¿Qué funciona bien del núcleo? ¿Qué necesita más trabajo?
+                            </td>
+                            <td>
+                                "¡Tiempo, detectives! Pausa en la depuración."
+                                <br><br>
+                                "Revisemos rápidamente sus Kanbans. ¿Qué partes del núcleo SÍ funcionan bien y están (o casi) en '¡Listo!'? ¿Qué tareas clave necesitarán más trabajo de corrección en la próxima sesión?"
+                                <br><br>
+                                <em>(Facilitar una reflexión rápida por equipo sobre el estado de calidad del núcleo).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar continuación de construcción/pruebas del núcleo.
+                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje "¡Núcleo más Fuerte! Guardar y Continuamos en Parte 2").
+                            </td>
+                            <td>
+                                "¡Gran trabajo de aseguramiento de calidad hoy! Han hecho el núcleo más fuerte."
+                                <br><br>
+                                "¡No olviden guardar todos sus avances y correcciones!"
+                                <br><br>
+                                "En la próxima sesión, continuaremos construyendo y asegurando la calidad del núcleo. ¡Cada vez más cerca de un prototipo avanzado increíble!"
+                                <br><br>
+                                "¡Nos vemos!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
